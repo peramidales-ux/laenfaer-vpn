@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: laenfaer-vpn
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node --enable-source-maps ./dist/index.mjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: DATABASE_URL
+        sync: false
